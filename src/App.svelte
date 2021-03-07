@@ -1,6 +1,7 @@
 <script>
   import { db } from "./firebase.js";
   export let name;
+
   let arrList = [];
   let newItemText = "";
   let newItemQuantity;
@@ -26,15 +27,15 @@
 
 <main>
   <h1>Grocery list</h1>
-  <h2>
-    <input type="text" bind:value={newItemText} placeholder="Item to buy" />
-    <input
-      type="number"
-      bind:value={newItemQuantity}
-      placeholder="Quantity to buy"
-    />
-    <button on:click={addItem}>Add item</button>
-  </h2>
+    <form>
+      <input type="text" bind:value={newItemText} placeholder="Item to buy" />
+      <input
+        type="number"
+        bind:value={newItemQuantity}
+        placeholder="Quantity to buy"
+      />
+      <button on:click={addItem}>Add item</button>
+    </form>
   <ul>
     {#each arrList as listItem}
       <li>
@@ -58,12 +59,6 @@
     font-size: 4em;
     font-weight: 100;
   }
-
-  h2 {
-    font-size: 10px;
-    color: black;
-  }
-
   @media (min-width: 640px) {
     main {
       max-width: none;
