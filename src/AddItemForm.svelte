@@ -19,3 +19,17 @@
   />
   <button on:click|preventDefault={addItem}>Add item</button>
 </form>
+
+<style>
+  form {
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+
+  input {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    color: #595959;
+    border: 1.5px solid #f29f05;
+  }
+</style>
