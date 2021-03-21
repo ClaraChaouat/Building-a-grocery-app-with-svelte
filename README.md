@@ -48,6 +48,8 @@ Technologies used to build the app:
 ## :dancer: Demo
 Willing to play with the web app version? Click on the link below :point_down: :
 
+https://groceryapp-with-svelte.netlify.app/
+
 ## :notebook_with_decorative_cover: Major learnings
 - Svelte framework,
 - Firebase firestore
