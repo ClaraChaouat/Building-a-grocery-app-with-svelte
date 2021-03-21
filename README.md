@@ -1,5 +1,5 @@
 ##  :memo: Description
-The goal of this project is to learn the Svelte framework by building a grocery list app.
+The goal of this project is to learn the Svelte framework by building a responsive grocery list app.
 All the data generated from the app are stored to Firebase firestore.
 
 ## :running: Get started
@@ -52,7 +52,8 @@ https://groceryapp-with-svelte.netlify.app/
 
 ## :notebook_with_decorative_cover: Major learnings
 - Svelte framework,
-- Firebase firestore
+- Firebase firestore,
+- Responsive design.
 
 ## :see_no_evil::hear_no_evil::speak_no_evil: Feedback
 I'm still in a learning process of web development so feel free to shoot me an e-mail If you have any feedbacks/comments or any usefull things that will help me to keep improving :relaxed:.
