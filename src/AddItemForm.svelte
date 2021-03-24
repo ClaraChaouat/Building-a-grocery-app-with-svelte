@@ -28,11 +28,6 @@
 </form>
 
 <style>
-  /*form {
-    margin-right: 25%;
-    margin-left: 25%;
-  }*/
-
   .item-input {
     width: 250px;
     flex-grow: 1;
@@ -45,8 +40,9 @@
     box-shadow: none;
   }
 
-  :focus {
-    outline-width: 0px;
+  .item-input:focus {
+    outline: var(--action-btn-color) solid 2px;
+    box-shadow: 0 0 0 2px hsla(210, 100%, 50%, 0.5);
   }
 
   .add-item-btn {
@@ -69,6 +65,11 @@
   @media (max-width: 600px) {
     .item-input {
       width: 200px;
+    }
+  }
+  @media (max-width: 320px) {
+    .item-input {
+      width: 160px;
     }
   }
 </style>
