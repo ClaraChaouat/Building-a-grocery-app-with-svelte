@@ -1,6 +1,6 @@
 ##  :memo: Description
 The goal of this project is to learn the Svelte framework by building a responsive grocery list app.
-All the data generated from the app are stored to Firebase firestore.
+All the data generated from the app are stored in Firebase firestore.
 
 ## :running: Get started
 
