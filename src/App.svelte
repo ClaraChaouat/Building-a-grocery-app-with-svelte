@@ -4,9 +4,7 @@
   import AddItemForm from "./AddItemForm.svelte";
   import GroceryItem from "./components/GroceryItem.svelte";
 
-  let name;
   let newItemList = {};
-
   let groceryList = [];
   let shareIconImage = "./images/share-icon.svg";
   let bellIconImage = "./images/bell-regular.svg";
@@ -15,7 +13,6 @@
   let calendarIconImage = "./images/calendar.svg";
   let dateString;
   let isEditing = false;
-  let xxx = "";
 
   let now = new Date(),
     month,
@@ -40,27 +37,16 @@
     db.collection("grocery").doc(itemId).delete();
   }
 
-  // async function updateItem(itemId, newItemValue) {
-  //    const response = await db.collection("grocery").doc(itemId).update({ name: newItemList[itemId] });
-  //   newItemList[itemId] = '';
-  //   isEditing = false;
-
-  // }
-
   function editItem() {
     isEditing = true;
   }
 
-  function updateItem(itemId, inputEl) {
-    console.log(itemId);
-    console.log(inputEl);
-    console.log(newItemList);
-    db.collection("grocery").doc(itemId).update({ name: inputEl });
-    console.log("no update");
+  async function updateItem(itemId, inputEl) {
+    const reponse = db
+      .collection("grocery")
+      .doc(itemId)
+      .update({ name: inputEl });
     isEditing = false;
-
-    // console.log(isEditing);
-    // isEditing = false;
   }
 </script>
 
@@ -123,7 +109,6 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
-    /*background-color: var(--background-color-dark);*/
     background-color: gainsboro;
     border-radius: 5px;
   }
@@ -144,7 +129,6 @@
     border-radius: 8px;
     background-color: #a6a6a6;
     cursor: pointer;
-    /*font-weight:bolder;*/
     border: 1px solid #a6a6a6;
     box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.18);
     margin-top: 15px;
@@ -159,8 +143,9 @@
   .bottom-navbar {
     align-items: center;
   }
-  header,
-  footer {
+
+  footer,
+  header {
     background-color: #262626;
     border-radius: 5px;
   }
@@ -204,13 +189,24 @@
       padding-right: 0;
     }
 
-    header {
-      border-bottom: 3px solid var(--border-color-light);
-      height: 8%;
-    }
     footer {
       border-top: 3px solid var(--border-color-light);
       height: 10%;
+    }
+
+    @media (max-width: 320px) {
+      ul {
+        width: 280px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .bottom-navbar-btn {
+        width: 60px;
+        height: 30px;
+        font-size: 8px;
+        display: inline-flex;
+      }
     }
   }
 </style>

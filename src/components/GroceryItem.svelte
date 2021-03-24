@@ -9,7 +9,6 @@
   export let inputEl;
   let trashIconImage = "./images/trash.svg";
   let editIconImage = "./images/edit-icon.svg";
-  //export let inputEl = item.name;
 </script>
 
 <li class="item">
@@ -22,12 +21,6 @@
       }}>Update</button
     >
   {:else}
-    <!--<span class="name">{item.name}</span>
-  <button class="edit-item-btn btn-white btn-animate"
-  on:click={() => {
-      isEditing=true;
-  }}><img src={editIconImage} alt="{editIconImage} image" /></button>-->
-
     <span class="name">{item.name}</span>
     <button
       class="edit-item-btn btn-white btn-animate"
@@ -40,9 +33,6 @@
   <button class="remove-item-btn" on:click={() => removeItem(itemId)}
     ><img src={trashIconImage} alt="{trashIconImage} image" /></button
   >
-  <!--<button class="remove-item-btn" on:click={() => removeItem(item.id)}
-    ><img src={trashIconImage} alt="{trashIconImage} image" /></button
-  >-->
 </li>
 
 <style>
@@ -85,8 +75,9 @@
     margin: 0;
   }
 
-  :focus {
-    outline-width: 0px;
+  .input-update:focus {
+    outline-color: var(--background-color-light);
+    outline-style: none;
   }
 
   .remove-item-btn {
