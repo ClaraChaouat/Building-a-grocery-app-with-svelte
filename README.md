@@ -2,7 +2,7 @@
 The goal of this project is to learn the Svelte framework by building a responsive grocery list app.
 All the data generated from the app are stored in Firebase firestore.
 <p align="center">
-  <img width="800" src="./images/groceryList.gif"/>
+  <img width="800" src="./public/images/groceryList.gif"/>
 </p>
 
 ## :running: Get started
