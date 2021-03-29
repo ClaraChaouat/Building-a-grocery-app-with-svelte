@@ -37,6 +37,7 @@
     border: 1px solid #a6a6a6;
     margin: 0 auto;
     flex-grow: 1;
+    margin-top:10px;
     box-shadow: none;
   }
 

@@ -11,6 +11,10 @@
   let redoIconImage = "./images/redo-solid.svg";
   let noteIconImage = "./images/sticky-note-regular.svg";
   let calendarIconImage = "./images/calendar.svg";
+  let heartIconImage = "./images/heart.svg";
+  let mailIconImage = "./images/envelope.svg";
+  let linkedinIconImage = "./images/linkedin.svg";
+  let githubIconImage = "./images/github.svg";
   let dateString;
   let isEditing = false;
 
@@ -53,9 +57,9 @@
 <header />
 <main>
   <h1>Grocery list</h1>
-  <h3>
+  <span class="date">
     {dateString} <img src={calendarIconImage} alt="{calendarIconImage} image" />
-  </h3>
+  </span>
   <AddItemForm />
 
   <ul>
@@ -102,20 +106,44 @@
     >
   </div>
 </main>
-<footer />
+<footer>
+  <div class="footer-contacts">
+    <a href="https://www.linkedin.com/in/clarachaouatb3981363/">
+      <img src={linkedinIconImage} alt="{linkedinIconImage} image" /></a
+    >
+    <a href="mailto:clara.chaouat@gmail.com?subject = Feedback&body = Message"
+      ><img src={mailIconImage} alt="{mailIconImage} image" />
+    </a>
+    <a href="https://github.com/ClaraChaouat">
+      <img src={githubIconImage} alt="{githubIconImage} image" />
+    </a>
+  </div>
+
+  <div class="footer-text">
+    Made with<img
+      class="heart-icon"
+      src={heartIconImage}
+      alt="{heartIconImage} image"
+    />somewhere over the rainbow
+  </div>
+</footer>
 
 <style>
   main {
     text-align: center;
     padding: 1em;
     margin: 0 auto;
-    background-color: gainsboro;
+    background-color: var(--main-background-color);
     border-radius: 5px;
   }
   h1 {
     color: var(--title-color);
     font-size: 4em;
     font-weight: 100;
+  }
+
+  .date {
+    font-weight: 700;
   }
   ul {
     list-style-type: none;
@@ -154,8 +182,25 @@
     height: 12%;
   }
   footer {
+    display: flex;
+    flex-direction: column;
     border-top: 3px solid #f29f05;
     height: 15%;
+    color: #a6a6a6;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heart-icon {
+    margin: 0 3px;
+  }
+
+  .footer-contacts {
+    display: block;
+  }
+
+  .footer-text {
+    margin-bottom: 5px;
   }
 
   @media (max-width: 600px) {
@@ -189,6 +234,16 @@
       padding-right: 0;
     }
 
+    .footer-text {
+      font-size: 10px;
+    }
+
+    .heart-icon {
+      width: 13px;
+      height: 8px;
+      margin: 0 2px;
+    }
+
     footer {
       border-top: 3px solid var(--border-color-light);
       height: 10%;
@@ -199,6 +254,16 @@
         width: 280px;
         margin: 0 auto;
         padding: 0;
+      }
+
+      .footer-text {
+        font-size: 10px;
+      }
+
+      .heart-icon {
+        width: 13px;
+        height: 8px;
+        margin: 0 2px;
       }
 
       .bottom-navbar-btn {
